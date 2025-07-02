@@ -26,30 +26,78 @@ h2 {
     color: #012a4a !important;
 }
 
+body {
+    margin: 0px;;
+}
+
+nav {
+    max-width: 100%;
+}
+
+nav ul {
+    margin: 0px;
+    padding: 0px;
+}
+
 .logo {
     height: 200px;
     width: 200px;
 }
 
+.linknav {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-bottom: 5px;
+    text-decoration: none;
+}
+
+
+.linknav :hover {
+    background-color: yellow;
+    border-bottom: 4px solid blue;
+}
+
+li a {
+    text-decoration: none;
+}
+
 .header {
    background-image: url(./Media/Sfondi-fantasiosi-5.jpg);
+   width: 100%;
+   margin: 0px;
 }
 
 .primoarticolo {
     background-image: linear-gradient(#d8ede7, #cad5df);
+    width: 100%;
+    margin: 0px;
 }
 
 .secondoarticolo {
    background-image: linear-gradient(#cad5df, #b7c6d4);
+   width: 100%;
+   margin: 0px;
 }
 
+
+/* Flex-Box */
+.contenitore {
+    display: flex;
+    flex-direction: row;
+
+}
 .terzoarticolo {
     background-image: linear-gradient(#b7c6d4, #9aafc2);
+    width: 60%;
+    
 }
 
 .suggeriti {
-     background-image: linear-gradient(#9aafc2, #8fa7bb);
+    background-color: yellow;
+     width: 40%; 
 }
+
 
 button {
     background-color: rgb(0, 178, 170);
@@ -57,4 +105,70 @@ button {
 
 button :hover {
     background-color: violet;
+}
+
+.imgsugg {
+    width: 300px;
+}
+
+.tornasu {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: block
+}
+
+.tornasu img {
+     width: 150px;
+    height: 150px;
+    animation: suGiu 1.5s infinite;
+}
+
+/*animazione*/
+@keyframes suGiu {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Media query */
+@media screen and (max-width: 900px) {
+
+    .imgsugg {
+        width: 150px;
+    }
+
+    .terzoarticolo, .suggeriti {
+        width: 100%;
+    }
+
+    .logo {
+    height: 100px;
+    width: 100px;
+    }
+    
+    .linknav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+   .contenitore {
+    flex-direction: column;
+    max-width: 100%;
+   }
+
+   .tornasu img {
+     width: 100px;
+    height: 100px;
+    }
+
+    .tornasu {
+        bottom: 5px;
+        right: 5px;
+    }
 }
